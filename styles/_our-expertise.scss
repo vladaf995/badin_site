@@ -1,0 +1,73 @@
+@import "config";
+
+.our-expertise {
+  background-color: $color-blue;
+  padding: 100px 0;
+
+  > h2 {
+    color: $color-white;
+    font-family: $font-family-secondary;
+
+    margin: 0;
+    padding: 0 20px;
+    font-size: 48px;
+  }
+
+  &__left-to-right {
+    display: flex;
+    padding-top: 20px;
+
+    animation: rightToLeft 40.5s linear infinite alternate;
+
+    @keyframes rightToLeft {
+      100% {
+        transform: translateX(-255%);
+      }
+    }
+
+    > span {
+      color: $color-white;
+
+      padding-left: 30px;
+      font-size: 32px;
+      white-space: nowrap;
+    }
+  }
+
+  &__right-to-left {
+    display: flex;
+    padding-top: 20px;
+
+    animation: leftToright 40.5s linear infinite alternate;
+
+    @keyframes leftToright {
+      0% {
+        transform: translateX(-255%);
+      }
+    }
+
+    > span {
+      color: $color-white;
+
+      padding-left: 30px;
+      font-size: 32px;
+      white-space: nowrap;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .our-expertise {
+    &__left-to-right {
+      &.first {
+        display: none;
+      }
+    }
+
+    &__right-to-left {
+      &.second {
+        display: none;
+      }
+    }
+  }
+}

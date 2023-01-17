@@ -1,0 +1,91 @@
+@import "config";
+
+.join-our-team {
+  background-color: $color-bg;
+
+  padding: 80px 20px;
+
+  > h2 {
+    font-family: $font-family-secondary;
+
+    font-size: 45px;
+    margin: 0;
+    position: relative;
+  }
+
+  h2::before {
+    content: "Open positions";
+    opacity: 0.1;
+    position: absolute;
+    top: -70px;
+  }
+
+  &__position {
+    background-color: $color-white;
+
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 12px;
+
+    > p {
+      @include font-primary-heavy;
+
+      margin: 0;
+      font-size: 18px;
+      padding-bottom: 20px;
+    }
+
+    > button {
+      @include font-primary-heavy;
+
+      background-color: $color-blue;
+      color: $color-white;
+
+      border: none;
+      padding: 12px 33px;
+      font-size: 20px;
+      border-radius: 35px;
+
+      > span {
+        > img {
+          margin-left: 10px;
+          width: 20px;
+        }
+      }
+    }
+  }
+
+  > button {
+    @include font-primary-heavy;
+
+    background-color: $color-black;
+    color: $color-white;
+
+    padding: 16px 32px;
+    border: none;
+    font-size: 20px;
+    border-radius: 35px;
+    display: block;
+    margin: auto;
+    margin-top: 30px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .join-our-team {
+    padding: 100px 210px;
+    > h2 {
+      font-size: 90px;
+    }
+
+    &__position {
+      display: flex;
+      justify-content: space-between;
+      padding: 40px;
+
+      > p {
+        font-size: 28px;
+      }
+    }
+  }
+}

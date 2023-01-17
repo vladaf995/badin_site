@@ -1,0 +1,272 @@
+@import "config";
+
+.clients-word {
+  background-color: $color-bg;
+
+  padding: 0 20px;
+
+  > h2 {
+    @include font-secondary-italic;
+
+    font-size: 48px;
+  }
+
+  > p {
+    @include font-primary-medium;
+
+    color: $color-gray;
+
+    font-size: 20px;
+  }
+
+  &__wrapper {
+    &__images {
+      display: flex;
+      align-items: flex-end;
+      padding: 20px 0;
+
+      img {
+        width: 80px;
+        padding-left: 12px;
+      }
+    }
+
+    &__box {
+      padding: 30px 0 100px;
+
+      &__client-info {
+        > h2 {
+          @include font-primary-heavy;
+
+          margin: 0;
+          font-size: 24px;
+        }
+
+        > p {
+          @include font-primary-heavy;
+
+          color: $color-gray;
+
+          margin: 0;
+          font-size: 16px;
+        }
+      }
+
+      &__content {
+        > p {
+          @include font-primary-medium-italic;
+
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .clients-word {
+    padding: 0 210px;
+
+    > h2 {
+      font-size: 90px;
+      margin: 0;
+    }
+
+    > p {
+      width: 30%;
+    }
+
+    &__wrapper {
+      display: flex;
+
+      &__box {
+        display: flex;
+        flex-direction: column-reverse;
+        padding-left: 30px;
+        width: 70%;
+
+        &__client-info {
+          padding-left: 20px;
+        }
+
+        &__content {
+          > p {
+            border-left: 2px solid;
+            line-height: 30px;
+            padding-left: 20px;
+          }
+        }
+      }
+
+      &__images {
+        position: relative;
+        width: 30%;
+
+        &__first {
+          position: absolute;
+
+          @keyframes example {
+            0% {
+              top: 0;
+              left: 35%;
+            }
+            20% {
+              top: 30%;
+              left: 70%;
+            }
+            40% {
+              top: 70%;
+              left: 60%;
+            }
+            60% {
+              top: 70%;
+              left: 5%;
+            }
+            80% {
+              top: 30%;
+              left: 5%;
+            }
+
+            100% {
+              top: 0;
+              left: 35%;
+            }
+          }
+          animation: example 10s infinite;
+        }
+
+        &__second {
+          position: absolute;
+
+          @keyframes example2 {
+            0% {
+              top: 30%;
+              left: 70%;
+            }
+            20% {
+              top: 70%;
+              left: 60%;
+            }
+            40% {
+              top: 70%;
+              left: 5%;
+            }
+            60% {
+              top: 30%;
+              left: 5%;
+            }
+            80% {
+              top: 0;
+              left: 35%;
+            }
+
+            100% {
+              top: 30%;
+              left: 70%;
+            }
+          }
+          animation: example2 10s infinite;
+        }
+
+        &__third {
+          position: absolute;
+
+          @keyframes example3 {
+            0% {
+              top: 70%;
+              left: 60%;
+            }
+            20% {
+              top: 70%;
+              left: 5%;
+            }
+            40% {
+              top: 30%;
+              left: 5%;
+            }
+            60% {
+              top: 0;
+              left: 35%;
+            }
+            80% {
+              top: 30%;
+              left: 70%;
+            }
+
+            100% {
+              top: 70%;
+              left: 60%;
+            }
+          }
+          animation: example3 10s infinite;
+        }
+
+        &__fourth {
+          position: absolute;
+
+          @keyframes example4 {
+            0% {
+              top: 70%;
+              left: 5%;
+            }
+            20% {
+              top: 30%;
+              left: 5%;
+            }
+            40% {
+              top: 0;
+              left: 35%;
+            }
+            60% {
+              top: 30%;
+              left: 70%;
+            }
+            80% {
+              top: 70%;
+              left: 60%;
+            }
+
+            100% {
+              top: 70%;
+              left: 5%;
+            }
+          }
+          animation: example4 10s infinite;
+        }
+
+        &__fifth {
+          position: absolute;
+
+          @keyframes example5 {
+            0% {
+              top: 30%;
+              left: 5%;
+            }
+            20% {
+              top: 0;
+              left: 35%;
+            }
+            40% {
+              top: 30%;
+              left: 70%;
+            }
+            60% {
+              top: 70%;
+              left: 60%;
+            }
+            80% {
+              top: 70%;
+              left: 5%;
+            }
+
+            100% {
+              top: 30%;
+              left: 5%;
+            }
+          }
+          animation: example5 10s infinite;
+        }
+      }
+    }
+  }
+}

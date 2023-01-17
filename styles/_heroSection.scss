@@ -1,0 +1,213 @@
+@import "config";
+
+.container {
+  background-image: url("/slike/header-hero/hero-bg.png");
+  background-size: cover;
+  height: auto;
+
+  &__wrapper {
+    &__header {
+      color: $color-white;
+
+      padding: 20px 20px 0;
+      display: flex;
+      justify-content: space-between;
+
+      &__logo {
+        > img {
+          width: 110px;
+        }
+      }
+    }
+
+    &__content {
+      padding: 20px 20px 0;
+
+      > h1 {
+        @include font-primary-bold;
+
+        color: $color-white;
+
+        font-size: 48px;
+        margin: 0;
+        padding-top: 60px;
+      }
+
+      > p {
+        color: $color-gray;
+
+        font-size: 22px;
+        margin: 0;
+        padding: 20px 0 10px;
+        line-height: 35px;
+      }
+
+      &__first-button {
+        background-color: $color-white;
+        color: $color-button-gray-text;
+      }
+
+      &__second-button {
+        background-color: $color-buuton-gray-bg;
+        color: $color-white;
+      }
+
+      > button {
+        @include font-primary-heavy;
+
+        border-radius: 50px;
+        width: 100%;
+        padding: 16px 32px;
+        margin-top: 15px;
+        border: none;
+        font-size: 24px;
+      }
+    }
+  }
+
+  &__net {
+    position: relative;
+
+    &__net-img {
+      > img {
+        width: 100%;
+      }
+    }
+
+    &__big-img {
+      position: absolute;
+      bottom: -15%;
+
+      z-index: 1;
+
+      > img {
+        width: 100vw;
+        margin-left: 20%;
+      }
+    }
+
+    &__planet {
+      position: absolute;
+      top: 35%;
+      left: 30%;
+      z-index: 1;
+
+      > img {
+        width: 50px;
+      }
+    }
+
+    &__tower {
+      position: absolute;
+      bottom: -12%;
+      z-index: 1;
+      left: 10%;
+
+      > img {
+        width: 70px;
+      }
+
+      &.right {
+        right: 0;
+        left: unset;
+        bottom: -20px;
+      }
+    }
+
+    &__white-bg {
+      position: absolute;
+      right: -40%;
+      bottom: -15%;
+
+      > img {
+        width: 100vw;
+        height: 40vh;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    display: flex;
+
+    &__wrapper {
+      &__header {
+        padding: 100px 0 0 150px;
+
+        > p {
+          visibility: hidden;
+        }
+      }
+
+      &__content {
+        padding: 100px 0 0 150px;
+
+        > h1 {
+          font-size: 100px;
+        }
+
+        &__second-button {
+          margin-left: 20px;
+        }
+
+        > button {
+          width: auto;
+        }
+      }
+    }
+
+    &__net {
+      &__net-img {
+        > img {
+          height: 100vh;
+        }
+      }
+
+      &__big-img {
+        bottom: -10%;
+
+        > img {
+          width: 60vw;
+          height: 70vh;
+          margin-left: 0;
+        }
+      }
+
+      &__planet {
+        top: 40%;
+        left: 30%;
+
+        > img {
+          width: 100%;
+        }
+      }
+
+      &__white-bg {
+        position: absolute;
+        right: -70%;
+        bottom: 0;
+        top: 12%;
+
+        > img {
+          width: 100vw;
+          height: 90vh;
+        }
+      }
+
+      &__tower {
+        bottom: -5%;
+        left: -10%;
+
+        > img {
+          width: 6vw;
+        }
+
+        &.right {
+          right: 5%;
+          bottom: -5%;
+        }
+      }
+    }
+  }
+}

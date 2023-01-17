@@ -1,0 +1,72 @@
+$font-weight-light: 300;
+$font-wight-regular: 400;
+$font-weight-small: 500;
+$font-weight-medium: 600;
+$font-weight-strong: 700;
+$font-weight-bold: 800;
+$font-weight-bolder: 900;
+
+//color
+$color-white: white;
+$color-gray: #6b728e;
+$color-button-gray-text: #22252e;
+$color-buuton-gray-bg: #393939;
+$color-blue: #317ade;
+$color-orange: #ed701d;
+$color-green: #1ebf73;
+$color-black: black;
+$color-footer-bg: #1a1a1a;
+$color-icon-bg: #2c2d3c;
+$color-bg: #f9fafe;
+
+//add font-family
+$font-family-primary: futura-pt, "Arial Condensed", sans-serif;
+$font-family-secondary: lust, "Courier", serif;
+
+@mixin font-primary-light {
+  font-family: $font-family-primary;
+  font-weight: $font-weight-light;
+  font-style: normal;
+}
+
+@mixin font-primary-medium {
+  font-family: $font-family-primary;
+  font-weight: $font-weight-small;
+  font-style: normal;
+}
+
+@mixin font-primary-medium-italic {
+  font-family: $font-family-primary;
+  font-weight: $font-weight-small;
+  font-style: italic;
+}
+
+@mixin font-primary-heavy {
+  font-family: $font-family-primary;
+  font-weight: $font-weight-strong;
+  font-style: normal;
+}
+
+@mixin font-primary-demi {
+  font-family: $font-family-primary;
+  font-weight: $font-weight-medium;
+  font-style: normal;
+}
+
+@mixin font-primary-bold {
+  font-family: $font-family-primary;
+  font-weight: $font-weight-strong;
+  font-style: normal;
+}
+
+@mixin font-secondary-italic {
+  font-family: $font-family-secondary;
+  font-weight: $font-weight-strong;
+  font-style: italic;
+}
+
+@mixin font-code {
+  font-family: source-code-pro, monospace;
+  font-weight: $font-weight-strong;
+  font-style: normal;
+}

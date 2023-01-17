@@ -1,0 +1,92 @@
+@import "config";
+
+.footer {
+  background-color: $color-footer-bg;
+  padding: 20px;
+
+  &__left-box {
+    > img {
+      width: 100px;
+    }
+
+    > p {
+      color: $color-white;
+
+      opacity: 0.5;
+    }
+
+    &__icon {
+      padding: 15px 0;
+
+      :first-child {
+        margin-left: 0;
+      }
+
+      > img {
+        background-color: $color-icon-bg;
+
+        padding: 15px;
+        border-radius: 20px;
+        margin-left: 8px;
+        width: 20px;
+      }
+    }
+  }
+
+  &__right-box {
+    &__navigation {
+      > h3 {
+        color: $color-white;
+
+        margin: 0;
+      }
+
+      ul,
+      li {
+        @include font-primary-demi;
+
+        color: $color-white;
+
+        list-style: none;
+        padding: 5px 0 0;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      ul {
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+.end {
+  background-color: $color-footer-bg;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px 0;
+
+  > p {
+    @include font-primary-demi;
+
+    color: $color-white;
+    opacity: 0.5;
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .footer {
+    display: flex;
+    padding: 100px 210px;
+
+    &__left-box {
+      width: 80%;
+    }
+
+    &__right-box {
+      display: flex;
+      justify-content: space-between;
+      width: 40%;
+    }
+  }
+}

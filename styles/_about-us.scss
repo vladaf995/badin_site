@@ -1,0 +1,82 @@
+@import "config";
+
+.about-us {
+  padding: 40px 20px;
+
+  p {
+    @include font-primary-bold;
+
+    color: $color-button-gray-text;
+
+    line-height: 25px;
+    font-size: 16px;
+    margin: 0;
+  }
+
+  &__first-section {
+    > h2 {
+      @include font-secondary-italic;
+
+      font-size: 48px;
+      margin: 0;
+      padding-bottom: 30px;
+    }
+  }
+
+  &__second-section {
+    > img {
+      width: 100%;
+      border-radius: 15px;
+      margin-top: 30px;
+    }
+
+    &__box {
+      > p {
+        padding: 20px 0;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .about-us {
+    padding: 0;
+
+    &__first-section {
+      padding: 40px 210px;
+      display: flex;
+
+      > h2 {
+        font-size: 90px;
+        padding-bottom: 0;
+      }
+
+      > p {
+        font-size: 20px;
+        align-self: flex-end;
+        padding-left: 100px;
+      }
+    }
+
+    &__second-section {
+      padding: 50px 0 50px 210px;
+      display: flex;
+
+      > img {
+        width: 50%;
+        margin-top: 0;
+      }
+
+      &__box {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+
+        > p {
+          font-size: 20px;
+          padding: 0 40px 30px 0;
+        }
+      }
+    }
+  }
+}

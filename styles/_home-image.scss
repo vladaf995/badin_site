@@ -1,0 +1,15 @@
+.home-image {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .home-image {
+    display: block;
+    padding: 0 210px;
+
+    > img {
+      width: 60%;
+      border-radius: 20px;
+    }
+  }
+}

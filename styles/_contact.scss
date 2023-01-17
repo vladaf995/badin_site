@@ -1,0 +1,53 @@
+@import "config";
+.contact {
+  padding: 150px 20px 0;
+
+  &__info {
+    > h2 {
+      font-family: $font-family-secondary;
+
+      font-size: 40px;
+      margin: 0;
+      position: relative;
+    }
+
+    h2::before {
+      content: "Are tou ready??";
+      opacity: 0.1;
+      position: absolute;
+      top: -50%;
+    }
+
+    > p {
+      @include font-primary-demi;
+
+      font-size: 40px;
+      text-decoration: underline;
+    }
+  }
+
+  &__image {
+    > img {
+      width: 100%;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .contact {
+    display: flex;
+    padding: 170px 210px 80px;
+
+    &__info {
+      width: 70%;
+
+      > h2 {
+        font-size: 90px;
+      }
+    }
+
+    &__image {
+      width: 30%;
+    }
+  }
+}

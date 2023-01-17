@@ -1,0 +1,61 @@
+@import "config";
+
+.gallery {
+  padding: 100px 16px;
+  img {
+    width: 100%;
+    border-radius: 23px;
+    margin-top: 15px;
+  }
+
+  &__card {
+    &__content {
+      position: relative;
+
+      &.display-none {
+        display: none;
+      }
+
+      &__icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        right: 0;
+        bottom: 0;
+        visibility: hidden;
+
+        > img {
+          width: 25px;
+        }
+      }
+    }
+  }
+}
+
+.gallery__card__content:hover {
+  > img {
+    filter: brightness(50%);
+  }
+
+  .gallery__card__content__icon {
+    visibility: visible;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .gallery {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 100px;
+
+    &__card {
+      width: 30%;
+
+      &__content {
+        &.display-none {
+          display: block;
+        }
+      }
+    }
+  }
+}
