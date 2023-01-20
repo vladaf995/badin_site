@@ -51,6 +51,19 @@
     &__card {
       width: 30%;
 
+      &.center {
+        align-self: center;
+      }
+
+      &.gallery-animation {
+        @keyframes fadeIn {
+          0% {
+            translate: 0 120px;
+          }
+        }
+        animation: fadeIn 2s;
+      }
+
       &__content {
         &.display-none {
           display: block;
