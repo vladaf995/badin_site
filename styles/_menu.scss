@@ -1,0 +1,152 @@
+@import "config";
+
+.desktop-menu {
+  visibility: hidden;
+}
+
+@media only screen and (min-width: 768px) {
+  .desktop-menu {
+    visibility: visible;
+    position: fixed;
+    top: 50%;
+    left: 2%;
+    rotate: -90deg;
+    z-index: 6;
+
+    &__line {
+      text-align: center;
+
+      > span {
+        background-color: $color-white;
+
+        transition: height 0.15s ease-out;
+        width: 2px;
+        height: 15px;
+        display: inline-block;
+      }
+    }
+
+    > p {
+      color: $color-white;
+
+      margin: 0;
+      text-align: center;
+      transition: letter-spacing 0.2s ease-out;
+    }
+  }
+
+  .desktop-menu:hover {
+    > p {
+      letter-spacing: 5px;
+      transition: letter-spacing 0.2s ease-in;
+    }
+    cursor: pointer;
+
+    .desktop-menu__line {
+      > span {
+        transition: height 0.2s ease-in;
+
+        &.span-mid {
+          height: 30px;
+        }
+      }
+
+      :first-child {
+        height: 22px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .desktop-menu-open {
+    transition: 1s ease;
+
+    &__container {
+      display: none;
+      height: 100%;
+    }
+
+    &__close-icon {
+      position: fixed;
+      top: 50%;
+      left: 5%;
+      cursor: pointer;
+    }
+
+    &__box {
+      position: fixed;
+      left: 10%;
+      padding: 40px;
+
+      > img {
+        width: 120px;
+      }
+
+      ul,
+      li {
+        @include font-primary-demi;
+        color: $color-white;
+
+        font-size: 48px;
+        list-style: none;
+        padding: 0;
+        padding: 10px 0;
+        cursor: pointer;
+      }
+    }
+
+    &__contact-info {
+      background-color: rgba($color: #000000, $alpha: 0.8);
+
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 50px;
+
+      &__icon {
+        padding-bottom: 20px;
+        > img {
+          width: 18px;
+          margin-left: 10px;
+        }
+
+        :first-child {
+          margin-left: 0;
+        }
+      }
+
+      > p {
+        @include font-primary-demi;
+
+        color: $color-white;
+
+        margin: 0;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .desktop-menu-border {
+    border-left: 115px solid $color-blue;
+    border-bottom: 50px solid $color-blue;
+    border-top: 50px solid $color-blue;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    display: block;
+  }
+
+  .big {
+    border-left: 1200px solid $color-blue;
+    border-bottom: 100px solid $color-blue;
+    border-top: 100px solid $color-blue;
+    border-right: 300px solid $color-blue;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+  }
+}

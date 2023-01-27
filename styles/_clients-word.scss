@@ -9,6 +9,7 @@
     @include font-secondary-italic;
 
     font-size: 48px;
+    margin: 0;
   }
 
   > p {
@@ -20,6 +21,19 @@
   }
 
   &__wrapper {
+    &__arrows {
+      display: flex;
+      justify-content: flex-end;
+      column-gap: 10px;
+
+      > img {
+        background-color: $color-blue;
+
+        width: 30px;
+        cursor: pointer;
+      }
+    }
+
     &__images {
       display: flex;
       align-items: flex-end;
@@ -34,29 +48,37 @@
     &__box {
       padding: 30px 0 100px;
 
-      &__client-info {
-        > h2 {
-          @include font-primary-heavy;
+      &__animation {
+        display: none;
 
-          margin: 0;
-          font-size: 24px;
+        &.first {
+          display: block;
         }
 
-        > p {
-          @include font-primary-heavy;
+        &__client-info {
+          > h2 {
+            @include font-primary-heavy;
 
-          color: $color-gray;
+            margin: 0;
+            font-size: 24px;
+          }
 
-          margin: 0;
-          font-size: 16px;
+          > p {
+            @include font-primary-heavy;
+
+            color: $color-gray;
+
+            margin: 0;
+            font-size: 16px;
+          }
         }
-      }
 
-      &__content {
-        > p {
-          @include font-primary-medium-italic;
+        &__content {
+          > p {
+            @include font-primary-medium-italic;
 
-          font-size: 20px;
+            font-size: 20px;
+          }
         }
       }
     }
@@ -69,7 +91,6 @@
 
     > h2 {
       font-size: 90px;
-      margin: 0;
     }
 
     > p {
@@ -78,57 +99,194 @@
 
     &__wrapper {
       display: flex;
+      height: 50vh;
+
+      &__arrows {
+        display: none;
+      }
 
       &__box {
-        display: flex;
-        flex-direction: column-reverse;
         padding-left: 30px;
         width: 50%;
+        position: relative;
 
-        &__client-info {
-          padding-left: 20px;
-        }
+        &__animation {
+          display: flex !important;
+          flex-direction: column-reverse;
+          position: absolute;
 
-        &__content {
-          position: relative;
+          &.first-content {
+            @keyframes first-content {
+              0% {
+                opacity: 0;
+              }
+              20% {
+                opacity: 1;
+              }
+              40% {
+                opacity: 0;
+              }
+              60% {
+                opacity: 0;
+              }
+              80% {
+                opacity: 0;
+              }
 
-          > p {
-            border-left: 2px solid $color-border-gray;
+              100% {
+                opacity: 0;
+              }
+            }
+            animation: first-content 15s infinite;
+          }
 
-            line-height: 30px;
+          &.second-content {
+            @keyframes second-content {
+              0% {
+                opacity: 1;
+              }
+              20% {
+                opacity: 0;
+              }
+              40% {
+                opacity: 0;
+              }
+              60% {
+                opacity: 0;
+              }
+              80% {
+                opacity: 0;
+              }
+
+              100% {
+                opacity: 1;
+              }
+            }
+            animation: second-content 15s infinite;
+          }
+
+          &.third-content {
+            @keyframes third-content {
+              0% {
+                opacity: 0;
+              }
+              20% {
+                opacity: 0;
+              }
+              40% {
+                opacity: 0;
+              }
+              60% {
+                opacity: 0;
+              }
+              80% {
+                opacity: 1;
+              }
+
+              100% {
+                opacity: 0;
+              }
+            }
+            animation: third-content 15s infinite;
+          }
+
+          &.fourth-content {
+            @keyframes fourth-content {
+              0% {
+                opacity: 0;
+              }
+              20% {
+                opacity: 0;
+              }
+              40% {
+                opacity: 0;
+              }
+              60% {
+                opacity: 1;
+              }
+              80% {
+                opacity: 0;
+              }
+
+              100% {
+                opacity: 0;
+              }
+            }
+            animation: fourth-content 15s infinite;
+          }
+
+          &.fifth-content {
+            @keyframes fifth-content {
+              0% {
+                opacity: 0;
+              }
+              20% {
+                opacity: 0;
+              }
+              40% {
+                opacity: 1;
+              }
+              60% {
+                opacity: 0;
+              }
+              80% {
+                opacity: 0;
+              }
+
+              100% {
+                opacity: 0;
+              }
+            }
+            animation: fifth-content 15s infinite;
+          }
+
+          &__client-info {
             padding-left: 20px;
           }
 
-          &__circle {
-            background-color: $color-blue;
+          &__content {
+            position: relative;
 
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            position: absolute;
-            left: -7px;
-
-            @keyframes circleanm {
-              0% {
-                top: 17%;
-              }
-              20% {
-                top: 32%;
-              }
-              40% {
-                top: 47%;
-              }
-              60% {
-                top: 62%;
-              }
-              80% {
-                top: 77%;
-              }
-              100% {
-                top: 10%;
-              }
+            > p {
+              border-left: 2px solid $color-border-gray;
+              display: flex;
+              align-items: center;
+              line-height: 30px;
+              padding-left: 20px;
+              min-height: 250px;
             }
-            animation: circleanm 15s infinite;
+
+            &__circle {
+              background-color: $color-blue;
+
+              width: 16px;
+              height: 16px;
+              border-radius: 50%;
+              position: absolute;
+              left: -7px;
+
+              @keyframes circleanm {
+                0% {
+                  top: 40px;
+                }
+                20% {
+                  top: 80px;
+                }
+                40% {
+                  top: 120px;
+                }
+                60% {
+                  top: 180px;
+                }
+                80% {
+                  top: 240px;
+                }
+                100% {
+                  top: 40px;
+                }
+              }
+              animation: circleanm 15s infinite;
+            }
           }
         }
       }

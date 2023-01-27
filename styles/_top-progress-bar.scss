@@ -1,0 +1,30 @@
+@import "config";
+
+.scroll {
+  border: 8px solid $color-black;
+
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  height: 70px;
+  width: 70px;
+  place-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 1s ease;
+
+  &__progress {
+    background-color: $color-black;
+
+    display: block;
+    height: calc(100% - 5px);
+    width: calc(100% - 5px);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+
+    > img {
+      width: 20px;
+    }
+  }
+}

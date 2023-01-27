@@ -11,66 +11,17 @@
 @import "contact";
 @import "footer";
 @import "home-image";
+@import "modal";
+@import "menu";
+@import "top-progress-bar";
 
 html,
 body {
   overflow-x: hidden;
+  scroll-behavior: smooth;
+  margin: 0;
 }
 
-.desktop-menu {
-  visibility: hidden;
-}
-
-@media only screen and (min-width: 768px) {
-  .desktop-menu {
-    visibility: visible;
-    position: fixed;
-    top: 50%;
-    left: 2%;
-    rotate: -90deg;
-
-    &__line {
-      margin-left: 30%;
-
-      > span {
-        background-color: $color-white;
-
-        width: 2px;
-        height: 15px;
-        display: inline-block;
-      }
-    }
-
-    > p {
-      color: $color-white;
-
-      margin: 0;
-      text-align: center;
-    }
-  }
-}
-
-.scroll {
-  background-color: $color-black;
-
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  &__icon {
-    background-color: $color-gray;
-    border: 3px solid $color-white;
-    border-radius: 50%;
-    padding: 5px;
-
-    > img {
-      width: 30px;
-    }
-  }
+* {
+  box-sizing: border-box;
 }
