@@ -1,12 +1,12 @@
 @import "config";
 
 .desktop-menu {
-  visibility: hidden;
+  display: none;
 }
 
 @media only screen and (min-width: 768px) {
   .desktop-menu {
-    visibility: visible;
+    display: block;
     position: fixed;
     top: 50%;
     left: 2%;
@@ -58,9 +58,14 @@
   }
 }
 
+.desktop-menu-open {
+  display: none;
+}
+
 @media only screen and (min-width: 768px) {
   .desktop-menu-open {
     transition: 1s ease;
+    display: block;
 
     &__container {
       display: none;
@@ -78,22 +83,65 @@
       position: fixed;
       left: 10%;
       padding: 40px;
+      display: none;
 
       > img {
         width: 120px;
       }
 
-      ul,
+      ul {
+        padding: 0;
+      }
+
       li {
         @include font-primary-demi;
+
         color: $color-white;
 
         font-size: 48px;
         list-style: none;
-        padding: 0;
-        padding: 10px 0;
+        padding: 10px 10px;
         cursor: pointer;
+        margin-top: 10px;
+        opacity: 0.7;
+
+        @keyframes navAnim {
+          0% {
+            opacity: 0;
+          }
+          20% {
+            opacity: 0;
+          }
+          40% {
+            opacity: 0;
+          }
+          100% {
+            opacity: 0.7;
+          }
+        }
+        animation: navAnim 1s;
       }
+    }
+
+    li:first-child {
+      opacity: 1;
+      background: linear-gradient(
+        to right,
+        $color-menu-bg 0%,
+        $color-menu-bg 20%,
+        transparent 20%,
+        transparent 100%
+      );
+    }
+
+    li:hover {
+      background: linear-gradient(
+        to right,
+        $color-menu-bg 0%,
+        $color-menu-bg 20%,
+        transparent 20%,
+        transparent 100%
+      );
     }
 
     &__contact-info {
